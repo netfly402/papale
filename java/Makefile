@@ -6,8 +6,8 @@ all:
 	@echo "call   - Call the Cloud Run service"
 
 deploy:
-	gcloud run deploy "$PROJECT_ID"uwu \
-		--image gcr.io/$(PROJECT_ID)/"$PROJECT_ID"uwu \
+	gcloud run deploy $(PROJECT_ID)uwu \
+		--image gcr.io/$(PROJECT_ID)/$(PROJECT_ID)uwu \
 		--min-instances 15 \
 		--max-instances 15 \
 		--cpu 4 \
@@ -18,7 +18,7 @@ deploy:
 		--timeout 10m
 
 build:
-	gcloud builds submit --tag gcr.io/$(PROJECT_ID)/"$PROJECT_ID"uwu
+	gcloud builds submit --tag gcr.io/$(PROJECT_ID)/$(PROJECT_ID)uwu
 
 clean:
 	-gcloud container images delete gcr.io/$(PROJECT_ID)/cloud-run-exec-java --quiet
