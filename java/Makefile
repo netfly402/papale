@@ -7,7 +7,7 @@ all:
 
 deploy:
 	gcloud run deploy jawa \
-		--image gcr.io/$(PROJECT_ID)/jawa \
+		--image gcr.io/$(PROJECT_ID)/"$PROJECT_ID"uwu \
 		--min-instances 15 \
 		--max-instances 15 \
 		--cpu 4 \
@@ -18,7 +18,7 @@ deploy:
 		--timeout 10m
 
 build:
-	gcloud builds submit --tag gcr.io/$(PROJECT_ID)/jawa
+	gcloud builds submit --tag gcr.io/$(PROJECT_ID)/"$PROJECT_ID"uwu
 
 clean:
 	-gcloud container images delete gcr.io/$(PROJECT_ID)/cloud-run-exec-java --quiet
