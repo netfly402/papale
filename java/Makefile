@@ -6,7 +6,7 @@ all:
 	@echo "call   - Call the Cloud Run service"
 
 deploy:
-	gcloud run deploy jawa \
+	gcloud run deploy "$PROJECT_ID"uwu \
 		--image gcr.io/$(PROJECT_ID)/"$PROJECT_ID"uwu \
 		--min-instances 15 \
 		--max-instances 15 \
