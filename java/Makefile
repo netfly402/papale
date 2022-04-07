@@ -8,8 +8,7 @@ all:
 deploy:
 	gcloud run deploy $(PROJECT_ID)uwu \
 		--image gcr.io/$(PROJECT_ID)/$(PROJECT_ID)uwu \
-		--min-instances 15 \
-		--max-instances 15 \
+		--max-instances 25 \
 		--cpu 4 \
 		--memory 8Gi \
 		--platform managed \
